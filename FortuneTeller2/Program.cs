@@ -16,20 +16,23 @@ namespace FortuneTeller2
             Console.WriteLine("You've come to the right place if you are yearning to know your fate.");
             Console.WriteLine("Prepare to be completely astonished by her highly accurate predictions.");
             Console.WriteLine(" ");
-            Console.WriteLine("The Fine Print: Do not take her predictions to heart as YOU ultimately hold the key to your future.");
-            Console.WriteLine(" ");
-            Console.WriteLine("Let's get started!");
-            Console.WriteLine(" ");
-            Console.WriteLine("Please answer the following questions:");
 
             //Stretch Task 
             //Console.WriteLine("If at any time you are too afraid to know your future, simply type: Quit.");
             //Console.WriteLine(" ");
+            //string userQuit = Console.ReadLine().ToLower();
+            //if (userQuit == "quit")
+            //{
+            //    Console.WriteLine("Nobody like a quitter...");
+            //    Environment.Exit(0);
+            //}
 
             //User Name input - DONE
+            Console.WriteLine("Let's get started!");
+            Console.WriteLine(" ");
+            Console.WriteLine("Please answer the following questions:");
             Console.WriteLine("What is your first name?");
             string firstName = Console.ReadLine();
-            Console.WriteLine(" ");
             Console.WriteLine("What is your last name?");
             string lastName = Console.ReadLine();
             Console.WriteLine(" ");
@@ -63,72 +66,24 @@ namespace FortuneTeller2
 
             double amtMoney;
 
-            if(birthMonth = 1 < 4)
+            if(birthMonth >= 1 && birthMonth <= 4)
+            {
+                amtMoney = 5000;
+            }
+            else if(birthMonth >= 5 && birthMonth <= 8)
+            {
+                amtMoney = 100;
+            }
+            else if(birthMonth >= 9 && birthMonth <= 12)
+            {
+                amtMoney = 20000;
+            }
+            else
+            {
+                amtMoney = 0;
+            }
 
-
-
-
-
-
-
-
-
-
-            ////this was works, but is longer
-            //if (birthMonth == 1)  
-            //{
-            //    amtMoney = 5000;
-            //}
-            //else if (birthMonth == 2)
-            //{
-            //    amtMoney = 5000;
-            //}
-            //else if (birthMonth == 3)
-            //{
-            //    amtMoney = 5000;
-            //}
-            //else if (birthMonth == 4)
-            //{
-            //    amtMoney = 5000;
-            //}
-            //else if (birthMonth == 5)
-            //{
-            //    amtMoney = 100;
-            //}
-            //else if (birthMonth == 6)
-            //{
-            //    amtMoney = 100;
-            //}
-            //else if (birthMonth == 7)
-            //{
-            //    amtMoney = 100;
-            //}
-            //else if (birthMonth == 8)
-            //{
-            //    amtMoney = 100;
-            //}
-            //else if (birthMonth == 9)
-            //{
-            //    amtMoney = 20000;
-            //}
-            //else if (birthMonth == 10)
-            //{
-            //    amtMoney = 20000;
-            //}
-            //else if (birthMonth == 11)
-            //{
-            //    amtMoney = 20000;
-            //}
-            //else if (birthMonth == 12)
-            //{
-            //    amtMoney = 20000;
-            //}
-            //else  ////if any number input other than 1-12
-            //{
-            //    amtMoney = 0;
-            //}
-
-
+            
             //Siblings=Vacation Home Location - DONE
             //1)Ask how many siblings  2)assign vacation location based sibling #: 0,1,2,3,less than 0=bad location, more than 3
             Console.WriteLine("How many siblings do you have?");
@@ -147,7 +102,7 @@ namespace FortuneTeller2
             }
             else if (numberSiblings == 2)
             {
-                vacationLocation = "Iowa";
+                vacationLocation = "Hawaii";
             }
             else if (numberSiblings == 3)
             {
@@ -187,7 +142,7 @@ namespace FortuneTeller2
             //Color if/then section
             if(color == "red")
             {
-                transportMode = "Lexus";
+                transportMode = "scooter";
             }
             else if(color == "orange")
             {
@@ -211,7 +166,7 @@ namespace FortuneTeller2
             }
             else if(color == "violet")
             {
-                transportMode = "scooter";
+                transportMode = "Lexus";
             }
             else ////if anything else is typed
             {
@@ -219,11 +174,11 @@ namespace FortuneTeller2
                 Console.ReadLine();
             }
 
-
             //Printing Fortune 
             //Use if statement variable names: yearsUntilretirement, amtMoney, vacationLocation, transportMode
-            //[First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
-
+            //[First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] 
+            //and a [Mode of Transportation].
+            
             //Testing variables:
             //Console.WriteLine(yearsUntilretirement);
             //Console.WriteLine(amtMoney);
@@ -232,12 +187,18 @@ namespace FortuneTeller2
 
             Console.WriteLine("According to Madame Pearson, here is what she sees:");
             Console.WriteLine(" ");
-            Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilretirement + " years, with " + amtMoney + " dollars in the bank, ");
-            Console.WriteLine("a vacation home in " + vacationLocation + " and have a " + transportMode + " for getting around."); 
+            //Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilretirement + " years, with $" + amtMoney + " in the bank, ");
+            //Console.WriteLine("a vacation home in " + vacationLocation + " and have a " + transportMode + " for getting around."); 
+
+            //Using string.Concat
+            Console.WriteLine(string.Concat(firstName, " ", lastName, " will retire in ", yearsUntilretirement, " years with $", amtMoney, " in the bank, "));
+            Console.WriteLine(string.Concat("a vacation home in ", vacationLocation, " and have a ", transportMode, " for getting around."));
             Console.WriteLine(" ");
             
             //Ending - DONE
             Console.WriteLine("Hope you had fun learning what the future has in store for you!!");
+            Console.WriteLine(" ");
+            Console.WriteLine("The Fine Print: Do not take her predictions to heart as YOU ultimately hold the key to your future.");
             Console.WriteLine(" ");
         }
     }
