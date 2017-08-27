@@ -17,7 +17,7 @@ namespace FortuneTeller2
             Console.WriteLine("Prepare to be completely astonished by her highly accurate predictions.");
             Console.WriteLine(" ");
 
-            //Stretch Task 
+            //Stretch Task - only works for right now, not throughout the program
             //Console.WriteLine("If at any time you are too afraid to know your future, simply type: Quit.");
             //Console.WriteLine(" ");
             //string userQuit = Console.ReadLine().ToLower();
@@ -33,6 +33,7 @@ namespace FortuneTeller2
             Console.WriteLine("Please answer the following questions:");
             Console.WriteLine("What is your first name?");
             string firstName = Console.ReadLine();
+            Console.WriteLine(" ");
             Console.WriteLine("What is your last name?");
             string lastName = Console.ReadLine();
             Console.WriteLine(" ");
